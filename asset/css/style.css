@@ -3,5 +3,214 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+/* --------------ANCHOR UTILITY -------------- */
+.f-white {
+    color: #fff;
+}
+
+.f-gray {
+    color: #808080;
+}
+/* --------------ANCHOR GENERALE -------------- */
+div.general-container {
+    height: 100vh;
+}
+
+/* --------------ANCHOR CONTAINER TOP -------------- */   
+div.container-top {
+    display: flex;
+    height: calc(100vh - 100px);
+} 
+
+/* --------------ANCHOR ASIDE -------------- */
+div#aside {
+    padding: 5px;
+    background-color: #000;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+div#aside a {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+div.aside-menu-top,
+div.aside-menu-bottom {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+/* LOGO */
+.logo-text {
+    height: 40px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.logo-small {
+    display: none;
+}
+
+/* ICONE DI NAVIGAZIONE */
+ul#nav-icons li {
+    list-style-type: none;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border-left: 3px solid transparent;
+}
+
+ul#nav-icons li:first-child {
+    border-left: 3px solid #adff2f;
+}
+
+ul#nav-icons a {
+    padding: 3px;
+    margin-left: 8px;
+}
+
+ul#nav-icons a:hover,
+div.new-playlist a:hover,
+div#install-app a:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+.aside-icon {
+    height: 25px;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.home-icon {
+    opacity: 1;
+}
+
+#home-link {
+    color: #fff;
+}
+
+/* PLAYLIST */
+div#playlist {
+    margin-top: 15px;
+    padding-left: 8px;
+}
+
+div#playlist h4 {
+    text-transform: uppercase;
+}
+
+div.new-playlist {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+div.new-playlist a {
+    padding: 3px;
+}
+
+.fa-plus {
+    color: #fff;
+    padding: 10px;
+    background-color: #a3a3a3;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+div#playlist ul {
+    margin-top: 10px;
+}
+
+div#playlist li {
+    padding-top: 10px;
+    font-size: 0.9em;
+}
+
+div#playlist li a:hover {
+    text-decoration: underline;
+}
+
+/* MENU' ASIDE BOTTOM */
+div.aside-menu-bottom {
+    padding: 8px;
+}
+
+/* INSTALLA APP */
+div#install-app,
+div#user {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+div#install-app {
+    border-bottom: 1px solid #808080;
+}
+
+div#install-app img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+div#install-app a {
+    padding: 3px;
+}
+
+/* PROFILO USER */
+div#user img {
+    padding: 2px;
+    background-color: #808080;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* --------------ANCHOR MAIN -------------- */
+div#main {
+    width: 100%;
+    background-color: #141922;
+    overflow-y: auto;
+    padding-top: 80px;
+}
+
+div#upgrade {
+    width: 100%;
+    text-align: right;
+    padding: 30px;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+div#upgrade a {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+div#upgrade a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+/* --------------ANCHOR FOOTER -------------- */
+div#footer {
+    height: 100px;
+    background-color: #282828;
+    z-index: 2;
+}
+
 

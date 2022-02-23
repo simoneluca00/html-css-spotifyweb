@@ -4,10 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="./asset/css/style.css">
     <title>Spotify Web App</title>
 </head>
 <body>
-    
+    <div class="general-container">
+
+        <div class="container-top">
+            <div id="aside">
+                <div class="aside-menu-top">
+                    <img class="logo-text" src="./asset/img/logo.svg" alt="logo con testo">
+                    <img class="logo-small" src="./asset/img/logo-small.svg" alt="logo">
+
+                    <ul id="nav-icons">
+                        <li>
+                           <img class="home-icon aside-icon" src="./asset/img/home.svg" alt="home icon">
+                           <a class="f-white" href="#">Home</a> 
+                        </li>
+
+                        <li>
+                           <img class="aside-icon" src="./asset/img/search.svg" alt="search icon">
+                           <a class="f-gray" href="#">Cerca</a> 
+                        </li>
+
+                        <li>
+                           <img class="aside-icon" src="./asset/img/libreria.svg" alt="libreria icon">
+                           <a class="f-gray" href="#">La tua libreria</a> 
+                        </li>
+                    </ul>
+
+                    <div id="playlist">
+                        <h4 class="f-white">Playlist</h4>
+
+                        <div class="new-playlist">
+                            <i class="fa-solid fa-plus"></i>
+                            <a class="f-gray" href="#">Crea una playlist</a>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <a class="f-gray" href="#">Nome Playlist</a>
+                            </li>
+
+                            <li>
+                                <a class="f-gray" href="#">Nome Playlist</a>
+                            </li>
+
+                            <li>
+                                <a class="f-gray" href="#">Nome Playlist</a>
+                            </li>
+
+                            <li>
+                                <a class="f-gray" href="#">Nome Playlist</a>
+                            </li>
+
+                            <li>
+                                <a class="f-gray" href="#">Nome Playlist</a>
+                            </li>
+
+                            <li>
+                                <a class="f-gray" href="#">Nome Playlist</a>
+                            </li>
+
+                            <li>
+                                <a class="f-gray" href="#">Nome Playlist</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="aside-menu-bottom">
+                    <div id="install-app">
+                        <img src="./asset/img/download.svg" alt="download app icon">
+                        <a class="f-gray" href="#">Installa app</a>
+                    </div>
+
+                    <div id="user">
+                        <img class="aside-icon" src="./asset/img/profile.svg" alt="profile icon">
+                        <h4 class="f-white">John Doe</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main">
+                <div id="upgrade">
+                    <a href="#">Effettua l'Upgrade</a>
+                </div>
+            </div>  
+        </div>
+
+        <div id="footer"></div>
+    </div>
 </body>
 </html>
