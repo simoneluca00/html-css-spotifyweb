@@ -10,6 +10,7 @@ a {
     text-decoration: none;
     color: #fff;
 }
+
 /* --------------ANCHOR UTILITY -------------- */
 .f-white {
     color: #fff;
@@ -18,6 +19,19 @@ a {
 .f-gray {
     color: #808080;
 }
+
+ul#nav-icons a:hover,
+div.new-playlist a:hover,
+div#install-app a:hover,
+a.nav-link:hover  {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+}
+
+.b-trasparent {
+    border-bottom: 3px solid transparent ;
+}
+
 /* --------------ANCHOR GENERALE -------------- */
 div.general-container {
     height: 100vh;
@@ -78,13 +92,6 @@ ul#nav-icons li:first-child {
 ul#nav-icons a {
     padding: 3px;
     margin-left: 8px;
-}
-
-ul#nav-icons a:hover,
-div.new-playlist a:hover,
-div#install-app a:hover {
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 5px;
 }
 
 .aside-icon {
@@ -181,9 +188,10 @@ div#main {
     width: 100%;
     background-color: #141922;
     overflow-y: auto;
-    padding-top: 80px;
+    padding: 80px 15px 15px 15px;
 }
 
+/* BUTTON "UPGRADE" POSIZIONAMENTO FISSO */
 div#upgrade {
     width: 100%;
     text-align: right;
@@ -203,9 +211,74 @@ div#upgrade a {
 }
 
 div#upgrade a:hover {
-    text-decoration: underline;
     opacity: 0.8;
 }
+
+/* PSEUDO NAV */
+div#nav {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.pseudo-border {
+    width: 30%;
+    height: 3px;
+    background-color: #adff2f;
+    margin: 0 auto;
+}
+
+a.nav-link {
+    padding: 8px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+
+/* SEZIONE RIPRODOTTE DI RECENTE */
+div.container-albums {
+    display: flex;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+div.album {
+    width: calc(100% / 6);
+    margin: 0 10px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+}
+
+div.album img {
+    max-width: 100%;
+}
+
+div.album h4 {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+div.album span {
+    font-size: 0.8em;
+}
+
+div.album img,
+div.album h4,
+div.album span {
+    cursor: pointer;
+}
+
+div.album h4:hover, 
+div.album span:hover {
+    text-decoration: underline;
+}
+
 /* --------------ANCHOR FOOTER -------------- */
 div#footer {
     height: 100px;
