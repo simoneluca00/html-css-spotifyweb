@@ -698,8 +698,16 @@ div.slider:hover .circle-2  {
         display: none;
     }
 
+    div#menu-right_footer {
+        padding-right: 0;
+    }
+
     div#menu-right_footer .fa-heart {
         display: inline-block;
+    }
+
+    div#menu-right_footer div.slider {
+        display: none; 
     }
 }
 
@@ -726,12 +734,13 @@ div.slider:hover .circle-2  {
         margin-left: 14px;
     }
 
-    div.slider {
+    div#menu-center_footer div.slider {
         display: none; 
     }
 
     div#menu-right_footer {
         padding-left: 25px;
+        padding-right: 0;
     }
     
 }
