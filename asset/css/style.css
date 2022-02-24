@@ -41,14 +41,15 @@ div.general-container {
 div.container-top {
     display: flex;
     height: calc(100vh - 100px);
+    overflow: hidden;
 } 
 
 /* --------------ANCHOR ASIDE -------------- */
 div#aside {
-    min-width: 190px;
+    width: 190px;
     padding: 5px;
     background-color: #000;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,6 +69,7 @@ div.aside-menu-bottom {
 
 /* LOGO */
 .logo-text {
+    width: 80%;
     height: 40px;
     cursor: pointer;
     margin-bottom: 15px;
@@ -195,13 +197,14 @@ div#main {
 
 /* BUTTON "UPGRADE" POSIZIONAMENTO FISSO */
 div#upgrade {
-    width: 100%;
+    width: 100vw;
     text-align: right;
     padding: 30px;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
+    z-index: 1;
 }
 
 div#upgrade a {
@@ -218,8 +221,6 @@ div#upgrade a:hover {
 
 /* PSEUDO NAV */
 div#nav {
-    width: 70%;
-    margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -243,16 +244,24 @@ a.nav-link {
     white-space: nowrap;
 }
 
+a.nav-link:hover {
+    color: #fff;
+}
 
 /* SEZIONE "RIPRODOTTE DI RECENTE" */
+section > h2 {
+    padding-left: 10px;
+}
+
 div.container-albums {
     display: flex;
     margin: 20px 0;
     padding: 20px 0;
 }
 
+
 div.album {
-    width: calc(100% / 6);
+    width: calc((100% / 6) - 20px);
     margin: 0 10px;
     display: flex;
     flex-flow: column wrap;
@@ -262,6 +271,27 @@ div.album {
 
 div.album img {
     max-width: 100%;
+}
+
+div.img-effect {
+    position: relative;
+}
+
+div.img-effect .fa-circle-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    background: none;
+}
+
+div.img-effect:hover {
+    opacity: 0.6;
+}
+
+div.img-effect:hover .fa-circle-play {
+    display: block;
 }
 
 div.album h4 {
@@ -287,18 +317,421 @@ div.album span:hover {
 /* SEZIONE "CREATO PER" */
 section#created-for h5,
 section#popular-artists h5 {
-    padding: 10px 0;
+    padding: 10px 0 10px 10px;
 }
 
 /* SEZIONE "ARTISTI POPOLARI" */
-section#popular-artists div.album > img {
-    border-radius: 50%;
+section#popular-artists div.img-effect {
+    clip-path: circle(50%);
 }
+
 /* --------------ANCHOR FOOTER -------------- */
 div#footer {
+    width: 100%;
     height: 100px;
     background-color: #282828;
-    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* MENU' SINISTRO FOOTER */
+div#menu-left_footer,
+div#menu-right_footer {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+div#menu-left_footer img {
+    max-height: 40%;
+    margin: 0 10px;
+}
+
+div.current-song-title span {
+    font-size: 0.7em;
+}
+
+div.current-song-title span:hover,
+div.current-song-title h5:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+div.icons-menu-sx {
+    display: flex;
+    margin-left: 20px;
+}
+
+div.icons-menu-sx i {
+    color: #d3d3d3;
+    padding: 5px;
+}
+
+div.icons-menu-dx .fa-shuffle {
+    display: none;
+}
+
+div.icons-menu-sx i:hover,
+.fa-shuffle:hover,
+.fa-backward-step:hover,
+.fa-forward-step:hover,
+.fa-arrow-rotate-right:hover,
+div#menu-right_footer i:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* MENU' CENTRALE FOOTER */
+div#menu-center_footer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+    flex-grow: 1;
+
+}
+
+/* icone del player */
+div.icons-player {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 5px;
+}
+
+.fa-shuffle,
+.fa-backward-step,
+.fa-forward-step,
+.fa-arrow-rotate-right {
+    color: #d3d3d3;
+    padding: 10px;
+}
+
+.fa-circle-play {
+    font-size: 2.5em;
+    color: #d3d3d3;
+    padding: 5px ;
+}
+
+.fa-circle-play:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* slider riproduzione musica */
+div#menu-center_footer div.slider {
+    width: 75%;
+}
+
+div.slider {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+div.current-slider,
+div.whole-slider {
+    height: 5px;
+    border-radius: 2px;
+    align-self: center;
+    cursor: pointer;
+}
+
+div.current-slider {
+    background-color: #d3d3d3;
+
+}
+
+div#menu-center_footer div.current-slider {
+    margin-left: 15px;   
+    width: 25%; 
+}
+
+div.whole-slider {
+    background-color: #808080;
+    margin-left: -2px;
+}
+
+div#menu-center_footer div.whole-slider {
+    margin-right: 15px;
+    width: 75%;
+}
+
+div.slider span {
+    color: #d3d3d3;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+div.slider:hover div.current-slider {
+    background-color: #adff2f;
+}
+
+div.circle {
+    width: 15px;
+    height: 15px;
+    clip-path: circle(50%);
+    background-color: #fff;
+    display: none;
+}
+
+div.slider:hover .circle  {
+    display: block;
+    cursor: pointer;
+}
+
+/* MENU' DESTRO FOOTER */
+div#menu-right_footer {
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+div#menu-right_footer i {
+    color: #d3d3d3;
+    padding: 7px;
+}
+
+div#menu-right_footer .fa-heart {
+    display: none;
+}
+
+div#menu-right_footer div.slider {
+    min-width: 60px;
+    height: 4px;
+    position: relative;
+}
+
+div#menu-right_footer div.current-slider {
+    width: 40%;
+}
+
+div#menu-right_footer div.whole-slider {
+    width: 60%;
+}
+
+div.icons-menu-dx {
+    display: flex;
+    padding-right: 10px;
+}
+
+div.circle-2 {
+    position: absolute;
+    left: 30%;
+    bottom: -3px;
+    width: 10px;
+    height: 10px;
+    clip-path: circle(50%);
+    background-color: #fff;
+    display: none;
+}
+
+div.slider:hover .circle-2  {
+    display: block;
+    cursor: pointer;
+}
+
+/* -------------------------------------------
+    inizio MEDIAQUERY HEIGHT < 240PX
+------------------------------------------- */
+@media screen and (max-height:240px) {
+    div#upgrade {
+        z-index: -1;
+    }
+
+}
+
+/* -------------------------------------------
+    inizio MEDIAQUERY WIDTH < 985px
+------------------------------------------- */
+@media screen and (max-width: 985px) {
+
+    /* SEZIONE "RIPRODOTTE DI RECENTE" */
+    div.container-albums {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    div.album {
+        width: calc((100% / 4) - 10px);
+        margin: 5px;
+    }
 }
 
 
+/* -------------------------------------------
+    inizio MEDIAQUERY WIDTH < 768px
+------------------------------------------- */
+
+@media screen and (max-width: 768px) {
+
+    /* SEZIONE "RIPRODOTTE DI RECENTE" */
+    div.container-albums {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    div.album {
+        width: calc((100% / 3) - 20px);
+        margin: 10px;
+    }
+
+    div.container-albums {
+        display: flex;
+        margin: 0;
+        padding: 20px 0;
+    }
+}
+
+/* -------------------------------------------
+    inizio MEDIAQUERY WIDTH < 576px
+------------------------------------------- */
+
+@media screen and (max-width: 576px) {
+
+    /* PSEUDO-NAV */
+    a.nav-link {
+        font-size: 0.8em;
+    }
+
+    /* SEZIONE "RIPRODOTTE DI RECENTE" */
+    div.container-albums {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    div.album {
+        width: calc((100% / 2) - 20px);
+        margin: 10px;
+    }
+
+    /* FOOTER */
+    div.icons-menu-sx {
+        display: flex;
+        flex-flow: column wrap;
+        margin-left: 10px;
+    }
+
+    div.icons-menu-dx {
+        flex-flow: column wrap;
+    }
+
+    div.icons-menu-dx .fa-desktop,
+    div.icons-menu-dx .fa-sliders {
+        display: none;
+    }
+}
+
+/* -------------------------------------------
+    inizio MEDIAQUERY WIDTH < 525px
+------------------------------------------- */
+@media screen and (max-width: 525px) {
+    div.general-container,
+    div#upgrade {
+        width: 100vw;
+    }
+
+    div#aside {
+        width: 60px ;
+        padding: 5px;
+    }
+
+        /* LOGO */
+    .logo-text {
+        display: none;
+    }
+
+    .logo-small {
+        display: block;
+        width: 40px;
+        margin: 10px 0 30px 5px;
+        align-self: flex-start;
+    }
+
+    ul#nav-icons a,
+    div#playlist,
+    div.aside-menu-bottom a,
+    div.aside-menu-bottom h4 {
+        display: none;
+    }
+
+    div#install-app {
+        border-bottom: none;
+    }
+    /* PSEUDO-NAV */
+        div#nav {
+        padding: 40px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* MAIN */
+    div#main {
+        width: calc(100vw - 60px);
+    }
+
+    div.container-albums {
+        padding: 0;
+        justify-content: center;
+    }
+
+    div.album {
+        width: calc(80% - 20px);
+        margin: 20px 10px;
+    }
+
+    /* FOOTER */
+
+    div#menu-left_footer .fa-heart,
+    div#menu-left_footer .fa-folder {
+        display: none;
+    }
+
+    div.icons-menu-dx .fa-shuffle {
+        display: inline-block;
+    }
+
+    div#menu-center_footer .fa-shuffle,
+    .fa-arrow-rotate-right {
+        display: none;
+    }
+
+    div#menu-right_footer .fa-heart {
+        display: inline-block;
+    }
+}
+
+/* -------------------------------------------
+    inizio MEDIAQUERY WIDTH < 375px
+------------------------------------------- */
+@media screen and (max-width: 375px) {
+
+    /* FOOTER */
+    div#menu-left_footer {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+        padding-right: 15px;
+    }
+
+    div#menu-left_footer img {
+        max-height: 30%;
+        margin: 0 0 0 15px;
+    }
+
+    .current-song-title {
+        padding-top: 10px;
+        margin-left: 14px;
+    }
+
+    div.slider {
+        display: none; 
+    }
+
+    div#menu-right_footer {
+        padding-left: 25px;
+    }
+    
+}
