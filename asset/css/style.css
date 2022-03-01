@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -113,7 +113,7 @@ ul#nav-icons a {
 
 /* PLAYLIST */
 div#playlist {
-    margin-top: 15px;
+    margin-top: 50px;
     padding-left: 8px;
 }
 
@@ -197,14 +197,15 @@ div#main {
 
 /* BUTTON "UPGRADE" POSIZIONAMENTO FISSO */
 div#upgrade {
-    width: 100vw;
+    width: 100%;
     text-align: right;
     padding: 30px;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 1;
+    white-space: nowrap;
 }
 
 div#upgrade a {
@@ -339,7 +340,7 @@ div#menu-left_footer,
 div#menu-right_footer {
     display: flex;
     align-items: center;
-    flex-grow: 1;
+    width: 30%;
 }
 
 div#menu-left_footer img {
@@ -380,6 +381,7 @@ div#menu-right_footer i:hover {
     background-color: rgba(255,255,255,0.1);
     border-radius: 5px;
     cursor: pointer;
+    color: #fff;
 }
 
 /* MENU' CENTRALE FOOTER */
@@ -389,8 +391,6 @@ div#menu-center_footer {
     justify-content: center;
     align-items: center;
     flex-basis: 40%;
-    flex-grow: 1;
-
 }
 
 /* icone del player */
@@ -419,6 +419,7 @@ div.icons-player {
     background-color: rgba(255,255,255,0.1);
     border-radius: 5px;
     cursor: pointer;
+    color: #fff;
 }
 
 /* slider riproduzione musica */
@@ -582,6 +583,13 @@ div.slider:hover .circle-2  {
         margin: 0;
         padding: 20px 0;
     }
+
+    /* FOOTER */
+    div.icons-menu-sx {
+        display: flex;
+        flex-flow: column wrap;
+        margin-left: 10px;
+    }
 }
 
 /* -------------------------------------------
@@ -607,12 +615,6 @@ div.slider:hover .circle-2  {
     }
 
     /* FOOTER */
-    div.icons-menu-sx {
-        display: flex;
-        flex-flow: column wrap;
-        margin-left: 10px;
-    }
-
     div.icons-menu-dx {
         flex-flow: column wrap;
     }
@@ -629,7 +631,7 @@ div.slider:hover .circle-2  {
 @media screen and (max-width: 525px) {
     div.general-container,
     div#upgrade {
-        width: 100vw;
+        width: 100%;
     }
 
     div#aside {
@@ -712,6 +714,19 @@ div.slider:hover .circle-2  {
 }
 
 /* -------------------------------------------
+    inizio MEDIAQUERY WIDTH < 425px
+------------------------------------------- */
+@media screen and (max-width: 425px) {
+    div#menu-center_footer div.slider {
+        display: none; 
+    }
+
+    span.artist-name {
+        display: none;
+    }
+}
+
+/* -------------------------------------------
     inizio MEDIAQUERY WIDTH < 375px
 ------------------------------------------- */
 @media screen and (max-width: 375px) {
@@ -732,10 +747,6 @@ div.slider:hover .circle-2  {
     .current-song-title {
         padding-top: 10px;
         margin-left: 14px;
-    }
-
-    div#menu-center_footer div.slider {
-        display: none; 
     }
 
     div#menu-right_footer {
