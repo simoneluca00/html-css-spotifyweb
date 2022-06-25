@@ -88,6 +88,10 @@ ul#nav-icons li {
     border-left: 3px solid transparent;
 }
 
+ul#nav-icons li:hover img {
+    filter: invert(0.4);
+}
+
 ul#nav-icons li:first-child {
     border-left: 3px solid #adff2f;
 }
@@ -195,6 +199,24 @@ div#main {
     padding: 80px 15px 15px 15px;
 }
 
+div#main::-webkit-scrollbar {
+    width: 10px;
+}
+
+div#main::-webkit-scrollbar-track {
+    background: #141922;
+}
+
+div#main::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom,
+        #141922 0px,
+        #141922 80px,
+        #808080 80px,
+        #808080 100%);
+    border-radius: 16px;
+    border: 3px solid #141922;
+}
+
 /* BUTTON "UPGRADE" POSIZIONAMENTO FISSO */
 div#upgrade {
     width: 100%;
@@ -230,10 +252,12 @@ div#nav {
 }
 
 div.pseudo-border {
-    width: 30%;
+    width: 35%;
     height: 3px;
     background-color: #adff2f;
-    margin: 0 auto 3px auto;
+    margin: 0 auto;
+    position: relative;
+    top: 5px;
 }
 
 a.nav-link {
@@ -268,6 +292,11 @@ div.album {
     flex-flow: column wrap;
     align-items: center;
     text-align: center;
+}
+
+div.album:hover {
+    position: relative;
+    z-index: 2;
 }
 
 div.album img {
@@ -590,6 +619,10 @@ div.slider:hover .circle-2  {
         flex-flow: column wrap;
         margin-left: 10px;
     }
+
+    div#menu-right_footer {
+        justify-content: center;
+    }
 }
 
 /* -------------------------------------------
@@ -615,10 +648,6 @@ div.slider:hover .circle-2  {
     }
 
     /* FOOTER */
-    div.icons-menu-dx {
-        flex-flow: column wrap;
-    }
-
     div.icons-menu-dx .fa-desktop,
     div.icons-menu-dx .fa-sliders {
         display: none;
